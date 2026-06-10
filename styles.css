@@ -812,7 +812,7 @@ table.compare-table { width: 100%; border-collapse: collapse; font-size: 14px }
 /* ABOUT */
 .about-hero {
   background: linear-gradient(135deg, #081F4D 0%, #0057D9 50%, #42B4FF 100%), var(--banner-bg) no-repeat center center/cover;
-  padding: 110px 0;
+  padding: 50px 0 60px;
   color: #fff;
   text-align: center;
 }
@@ -857,7 +857,7 @@ table.compare-table { width: 100%; border-collapse: collapse; font-size: 14px }
 /* PAGE HERO */
 .page-hero {
   background: linear-gradient(135deg, #081F4D 0%, #0057D9 50%, #42B4FF 100%), var(--banner-bg) no-repeat center center/cover;
-  padding: 110px 0;
+  padding: 50px 0 60px;
   color: #fff;
 }
 .page-hero h1 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 900; margin-bottom: 10px }
