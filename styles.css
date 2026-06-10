@@ -2258,6 +2258,65 @@ footer {
 }
 
 /* ============================================================
+   ABOUT PAGE — Bank logos displayed freely (no bounding box)
+   ============================================================ */
+.about-bank-card {
+  background: #fff;
+  border: 1.5px solid #E8EEF8;
+  border-radius: 18px;
+  padding: 28px 20px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0,87,217,0.04);
+}
+.about-bank-card:hover {
+  border-color: #0057D9;
+  box-shadow: 0 8px 28px rgba(0,87,217,0.12);
+  transform: translateY(-4px);
+}
+
+/* The logo image — shown freely, no box around it */
+.about-bank-logo {
+  width: 120px;
+  height: 72px;
+  object-fit: contain;    /* Scales naturally, keeps aspect ratio */
+  display: block;
+  filter: none;           /* No colour filters — show real logo colours */
+}
+
+.about-bank-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy, #081F4D);
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.about-bank-card p {
+  font-size: 11px;
+  color: #64748B;
+  margin: 0;
+  font-weight: 500;
+}
+.about-bank-card .rate {
+  font-size: 13px;
+  font-weight: 800;
+  color: #12B76A;
+  font-family: 'IBM Plex Sans', monospace;
+  background: rgba(18,183,106,0.08);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+  .about-bank-card { padding: 18px 12px 14px; }
+  .about-bank-logo { width: 90px; height: 54px; }
+}
+
+/* ============================================================
    PAGE HERO — Two-column layout with right photo slot
    Used on all sub-pages (loans, about, contact, blog, etc.)
    ============================================================ */
