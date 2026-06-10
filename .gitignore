@@ -1,0 +1,13 @@
+# Python build/scratch
+scratch/
+__pycache__/
+*.py
+*.pyc
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/

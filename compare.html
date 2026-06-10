@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Bank Rates | Vasatika</title>
+<meta name="description" content="Vasatika helps you compare home loan interest rates from SBI, HDFC, LIC Housing, PNB Housing, Indian Bank & more. Free expert help. Serving all UP cities.">
+<meta name="keywords" content="home loan Lucknow, home loan UP, SBI home loan, HDFC home loan, compare home loan interest rates, DSA home loan agent Lucknow, housing loan Uttar Pradesh, ghar loan UP, home loan Kanpur, home loan Agra, home loan Varanasi">
+<meta property="og:title" content="Vasatika – Compare & Apply Home Loans in UP">
+<meta property="og:description" content="Compare home loans from 9+ banks. Free expert help. Serving all of Uttar Pradesh.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FinancialService","name":"Vasatika","description":"Home loan DSA agent helping customers compare and apply for home loans from SBI, HDFC, LIC Housing, PNB Housing, Indian Bank, Aadhar, Utkarsh, Shubham, Piramal across Uttar Pradesh","areaServed":["Lucknow","Kanpur","Agra","Varanasi","Prayagraj","Meerut","Gorakhpur","Noida","Uttar Pradesh"],"serviceType":["Home Loan","Loan Against Property","Home Construction Loan","Balance Transfer"],"telephone":"+91-9839324536","address":{"@type":"PostalAddress","addressLocality":"Lucknow","addressRegion":"Uttar Pradesh","addressCountry":"IN"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Sans:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="toast" id="toast">✓ Application submitted! We'll call you within 30 minutes.</div>
+
+<!-- 01 Smart Trust Bar -->
+<div class="top-trust-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <div class="d-flex align-items-center gap-3">
+      <a href="tel:9839324536" class="trust-item"><i data-lucide="phone"></i> 📞 98393 24536</a>
+      <span class="mobile-none">|</span>
+      <span class="trust-item"><i data-lucide="star"></i> ⭐ 4.9 Customer Rating</span>
+      <span class="mobile-none">|</span>
+      <span class="trust-item"><i data-lucide="landmark"></i> 🏦 15+ Lending Partners</span>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <a href="https://wa.me/919839324536" target="_blank" class="trust-item"><i data-lucide="message-circle"></i> 💬 WhatsApp</a>
+      <span>|</span>
+      <a href="apply.html" class="fw-bold text-warning">Quick Apply</a>
+      <span>|</span>
+      <div class="lang-switcher" style="cursor:pointer;">🌐 EN | हिंदी</div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 Sticky Glass Navbar -->
+<header class="main-nav-header d-flex align-items-center" style="--header-photo: url("header_bg.jpg");">
+  <div class="container nav-inner d-flex justify-content-between align-items-center w-100">
+    <a href="index.html" class="nav-logo d-flex align-items-center gap-2 text-decoration-none">
+      <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+      <div class="logo-text"><strong>Vasatika</strong><span style="font-size:10px; display:block;">Building Trust. Creating Homes.</span></div>
+    </a>
+    <ul class="nav-links d-flex align-items-center gap-1 list-unstyled mb-0 mobile-none">
+      <li><a href="index.html" class="px-2 py-1">Home</a></li>
+      <li><a href="loans.html" class="px-2 py-1">Home Loans</a></li>
+      <li><a href="eligibility.html" class="px-2 py-1">Calculators</a></li>
+      <li><a href="blog.html" class="px-2 py-1">Resources</a></li>
+      <li><a href="about.html" class="px-2 py-1">About Us</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2">
+      <div class="nav-ctas-spec d-flex gap-2 mobile-none">
+        <a href="compare.html" class="btn btn-outline-primary btn-secondary-energetic" style="font-size:13px; padding:8px 16px; border-radius:14px;">Compare Rates</a>
+        <a href="apply.html" class="btn btn-primary btn-primary-energetic" style="font-size:13px; padding:8px 16px; border-radius:14px; background:#FF3B30; border-color:#FF3B30;">Apply Now</a>
+      </div>
+      <button class="hamburger-spec" onclick="toggleMNavSpec()">
+        <span style="background:#081F4D"></span><span style="background:#081F4D"></span><span style="background:#081F4D"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a href="index.html" class="nav-logo text-decoration-none">
+      <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+      <div class="logo-text"><strong>Vasatika</strong><span>Building Trust. Creating Homes.</span></div>
+    </a>
+    <button class="mobile-close" onclick="closeMNav()">✕</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="index.html">Home</a>
+    <a href="loans.html">Home Loans</a>
+    <a href="eligibility.html">Calculators</a>
+    <a href="blog.html">Resources</a>
+    <a href="about.html">About Us</a>
+    <a href="compare.html">Compare Rates</a>
+  </div>
+  <div class="mobile-nav-ctas">
+    <a href="apply.html" class="btn btn-blue w-100 mb-2">Apply Now</a>
+    <a href="https://wa.me/919839324536" class="btn btn-outline w-100"><i data-lucide="message-square"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span> Compare Banks</div>
+      <h1>Compare Home Loan Interest Rates</h1>
+      <p>Side-by-side comparison of all 9 bank partners. Find the best rate for your profile — free expert matching included.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="compare-filter">
+        <button class="filter-btn active" onclick="filterTable('all',this)">All Banks</button>
+        <button class="filter-btn" onclick="filterTable('govt',this)">Govt Banks</button>
+        <button class="filter-btn" onclick="filterTable('private',this)">Private Banks</button>
+        <button class="filter-btn" onclick="filterTable('hfc',this)">Housing Finance Cos.</button>
+        <button class="filter-btn" onclick="filterTable('lowincome',this)">Low Income / Informal</button>
+      </div>
+      <div class="compare-table-wrap">
+        <table class="compare-table" id="fullCompareTable">
+          <thead><tr><th>Bank / Lender</th><th>Interest Rate</th><th>EMI ₹25L/20yr</th><th>Max Loan</th><th>Max Tenure</th><th>Processing Fee</th><th>Best For</th><th>Apply</th></tr></thead>
+          <tbody>
+            <tr data-cat="govt"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#1a6bb5; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_SBI.png" alt="SBI" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">SBI</div><div><div class="bank-name">State Bank of India <span class="badge-best">BEST RATE</span></div><div class="bank-type">Government Bank</div></div></div></td><td><span class="rate-badge">8.35%–9.65%</span></td><td>₹21,539</td><td>No limit</td><td>30 yrs</td><td>0.35% (min ₹2,000)</td><td>First home, PMAY subsidy</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="govt"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#00529b; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_IND.png" alt="IND" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">IND</div><div><div class="bank-name">Indian Bank</div><div class="bank-type">Government Bank</div></div></div></td><td><span class="rate-badge">8.40%–10.25%</span></td><td>₹21,608</td><td>No limit</td><td>30 yrs</td><td>0.40% (max ₹20K)</td><td>Govt employees, low fee</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="private"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#004c97; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_HDFC.png" alt="HDFC" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">HDFC</div><div><div class="bank-name">HDFC Bank</div><div class="bank-type">Private Bank</div></div></div></td><td><span class="rate-badge">8.40%–9.95%</span></td><td>₹21,608</td><td>No limit</td><td>30 yrs</td><td>Up to 0.50%</td><td>Fastest approval, salaried</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="hfc"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#8b0000; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_LIC.png" alt="LIC" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">LIC</div><div><div class="bank-name">LIC Housing Finance</div><div class="bank-type">Housing Finance</div></div></div></td><td><span class="rate-badge">8.40%–10.35%</span></td><td>₹21,608</td><td>No limit</td><td>30 yrs</td><td>₹10,000 flat</td><td>No income proof option</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="hfc"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#e87722; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_PNB.png" alt="PNB" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">PNB</div><div><div class="bank-name">PNB Housing Finance</div><div class="bank-type">Housing Finance</div></div></div></td><td><span class="rate-badge">8.50%–14.50%</span></td><td>₹21,749</td><td>₹5 Cr</td><td>30 yrs</td><td>Up to 0.50%</td><td>Self-employed, flexible docs</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="hfc lowincome"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#6a1b9a; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_ADH.png" alt="ADH" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">ADH</div><div><div class="bank-name">Aadhar Housing Finance</div><div class="bank-type">Affordable Housing</div></div></div></td><td><span class="rate-badge">9.75%–15.00%</span></td><td>₹23,776</td><td>₹1 Cr</td><td>30 yrs</td><td>1%</td><td>Informal income, EWS/LIG</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="hfc lowincome"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#2e7d32; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_UKR.png" alt="UKR" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">UKR</div><div><div class="bank-name">Utkarsh Small Finance Bank</div><div class="bank-type">Small Finance Bank</div></div></div></td><td><span class="rate-badge">10.50%–16.00%</span></td><td>₹24,959</td><td>₹50L</td><td>20 yrs</td><td>1%</td><td>Rural / semi-urban UP</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="hfc lowincome"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#c62828; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_SHB.png" alt="SHB" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">SHB</div><div><div class="bank-name">Shubham Housing Finance</div><div class="bank-type">Affordable Housing</div></div></div></td><td><span class="rate-badge">10.90%–16.50%</span></td><td>₹25,436</td><td>₹75L</td><td>25 yrs</td><td>1.5%</td><td>No income proof, MSME</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+            <tr data-cat="hfc lowincome"><td><div class="bank-cell"><div class="bank-logo-box" style="background:#f57f17; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="bank_PRM.png" alt="PRM" style="width:100%; height:100%; object-fit:contain; display:block;" onerror="this.style.display=\'none\';">PRM</div><div><div class="bank-name">Piramal Capital & Housing</div><div class="bank-type">NBFC</div></div></div></td><td><span class="rate-badge">10.50%–17.00%</span></td><td>₹24,959</td><td>₹5 Cr</td><td>25 yrs</td><td>2%</td><td>Self-employed, LAP specialist</td><td><a href="apply.html" class="btn btn-red" style="font-size:12px;padding:7px 14px">Apply</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:var(--light);border-radius:12px;padding:18px 22px;margin-top:20px;font-size:13px;color:var(--muted)"><strong>Disclaimer:</strong> Rates are indicative and subject to change based on your credit score, income, and bank policy. LoanSetu will match you with the best available rate for your profile. Updated June 2025.</div>
+      <div style="text-align:center;margin-top:36px">
+        <p style="font-size:16px;color:var(--blue);font-weight:600;margin-bottom:14px">Not sure which bank is right for you?</p>
+        <a href="apply.html" class="btn btn-red" style="font-size:15px;padding:13px 32px;margin-right:12px">Get Expert Recommendation →</a>
+        <a href="eligibility.html" class="btn btn-outline" style="font-size:15px;padding:13px 28px">Check My Eligibility</a>
+      </div>
+    </div>
+  </section>
+<!-- 15 Final Conversion Banner -->
+<section class="final-cta scroll-reveal">
+  <div class="container">
+    <h2>Ready To Own Your Dream Home?</h2>
+    <p>Compare 15+ Lending Partners and get the absolute lowest interest rate guaranteed.</p>
+    <a href="apply.html" class="btn btn-light btn-primary-energetic" style="font-size:16px; padding:14px 36px; border-radius:14px; color:#FF3B30; font-weight:800;">Apply Now</a>
+  </div>
+</section>
+
+<!-- 16 Footer -->
+
+<!-- 16 Footer -->
+<footer style="background:#081F4D; color:rgba(255,255,255,0.75); padding:80px 0 24px;">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <a href="index.html" class="nav-logo d-flex align-items-center gap-2 text-decoration-none mb-3">
+          <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+          <div class="logo-text"><strong class="text-white">Vasatika</strong><span style="font-size:10px; display:block; color:rgba(255,255,255,0.5)">Building Trust. Creating Homes.</span></div>
+        </a>
+        <p style="font-size:14px;">Vasatika is a registered housing finance agent and loan facilitator. Helping families secure the most affordable housing loans across Uttar Pradesh.</p>
+      </div>
+      <div class="col-md-2 col-6">
+        <h5 class="text-white mb-3">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="loans.html" class="text-white-50 text-decoration-none">Home Loans</a></li>
+          <li><a href="loans.html" class="text-white-50 text-decoration-none">Loan Against Property</a></li>
+          <li><a href="loans.html" class="text-white-50 text-decoration-none">Balance Transfer</a></li>
+          <li><a href="loans.html" class="text-white-50 text-decoration-none">Construction Loan</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-6">
+        <h5 class="text-white mb-3">Calculators</h5>
+        <ul class="list-unstyled">
+          <li><a href="eligibility.html" class="text-white-50 text-decoration-none">EMI Calculator</a></li>
+          <li><a href="eligibility.html" class="text-white-50 text-decoration-none">Eligibility Tool</a></li>
+          <li><a href="eligibility.html" class="text-white-50 text-decoration-none">Affordability</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-6">
+        <h5 class="text-white mb-3">Resources</h5>
+        <ul class="list-unstyled">
+          <li><a href="blog.html" class="text-white-50 text-decoration-none">Rate Guides</a></li>
+          <li><a href="blog.html" class="text-white-50 text-decoration-none">PMAY Info</a></li>
+          <li><a href="blog.html" class="text-white-50 text-decoration-none">Credit Score</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-6">
+        <h5 class="text-white mb-3">Contact</h5>
+        <ul class="list-unstyled">
+          <li><a href="contact.html" class="text-white-50 text-decoration-none">Support Desk</a></li>
+          <li><a href="contact.html" class="text-white-50 text-decoration-none">UP Branches</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr style="border-color:rgba(255,255,255,0.1); margin: 40px 0 24px;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 text-white-50" style="font-size:13px;">
+      <div>© 2026 Vasatika. All rights reserved. | Call Support: 98393 24536</div>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+        <a href="#" class="text-white-50 text-decoration-none">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING ELEMENTS -->
+<a href="https://wa.me/919839324536" target="_blank" class="floating-whatsapp"><i data-lucide="message-circle"></i></a>
+<a href="tel:9839324536" class="floating-call"><i data-lucide="phone"></i></a>
+<button class="back-to-top-btn" id="backToTopBtn" onclick="scrollToTop()"><i data-lucide="chevron-up"></i></button>
+
+<button class="chatbot-toggle-btn" onclick="toggleChatbot()"><i data-lucide="help-circle"></i></button>
+
+<div class="chatbot-widget" id="chatbotWidget" style="position: fixed; bottom: 160px; left: 24px; width: 340px; height: 450px; background: #fff; border-radius: 12px; box-shadow: 0 8px 30px rgba(8, 31, 77, 0.15); display: none; flex-direction: column; z-index: 999; border: 1.5px solid #E8EEF8; overflow: hidden">
+  <div class="chatbot-header">
+    <span>Vasatika Assistant (Vasu)</span>
+    <button onclick="toggleChatbot()" style="background:none;border:none;color:#fff;font-size:16px;">✕</button>
+  </div>
+  <div class="chatbot-body" id="chatbotBody">
+    <div class="p-2 mb-2 bg-light rounded" style="font-size:12px;">Hello! I am Vasu, your Vasatika AI Assistant. How can I help you with home loan eligibility, documentation, or bank matching?</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chatbotInput" placeholder="Type message..." onkeypress="handleChatbotKey(event)">
+    <button class="btn btn-sm" onclick="sendChatbotMsg()" style="background:#0057D9;color:#fff;"><i data-lucide="send"></i></button>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
