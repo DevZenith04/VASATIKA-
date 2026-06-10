@@ -465,7 +465,7 @@ $(document).ready(function() {
   }
 });
 
-// Original page-specific script functions from loansetu_complete.html
+// Original page-specific script functions from vasatika_complete.html
 function calcEMI2(){
   const P=parseFloat(document.getElementById('c-amt').value)||0;
   const r=(parseFloat(document.getElementById('c-rate').value)||0)/12/100;
