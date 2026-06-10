@@ -1171,26 +1171,36 @@ footer {
   border: none !important;
   overflow: hidden !important;
   z-index: 1 !important;
+  cursor: pointer;
 }
 .products-section .loan-card::before, .loan-card::before {
   content: '' !important;
   position: absolute !important;
   top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-  background: linear-gradient(180deg, rgba(8, 31, 77, 0.45) 0%, rgba(8, 31, 77, 0.88) 100%) !important;
-  z-index: -1 !important;
+  background: linear-gradient(180deg, rgba(8, 31, 77, 0.30) 0%, rgba(8, 31, 77, 0.90) 100%) !important;
+  z-index: 0 !important;
   transition: opacity 0.3s ease !important;
 }
 .products-section .loan-card:hover::before, .loan-card:hover::before {
-  background: linear-gradient(180deg, rgba(8, 31, 77, 0.58) 0%, rgba(8, 31, 77, 0.95) 100%) !important;
+  background: linear-gradient(180deg, rgba(8, 31, 77, 0.50) 0%, rgba(8, 31, 77, 0.97) 100%) !important;
+}
+/* All content INSIDE a loan-card must sit above the overlay */
+.products-section .loan-card > *, .loan-card > * {
+  position: relative !important;
+  z-index: 1 !important;
 }
 .products-section .loan-card h3, .products-section .loan-card h4, .products-section .loan-card p, .products-section .loan-card div,
 .products-section .loan-card h3 a, .products-section .loan-card h4 a,
-.loan-card h3, .loan-card h4, .loan-card p, .loan-card div, .loan-card li {
+.loan-card h3, .loan-card h4, .loan-card p, .loan-card li {
   color: #fff !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 .products-section .loan-icon, .loan-card .loan-icon {
   background: rgba(255, 255, 255, 0.2) !important;
   color: #fff !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .loan-rates-ticker {
