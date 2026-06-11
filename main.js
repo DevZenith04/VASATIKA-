@@ -308,7 +308,7 @@ function sendChatbotMsg() {
     } else if (msgLower.includes('document') || msgLower.includes('paper') || msgLower.includes('proof') || msgLower.includes('kyc')) {
       reply = "For salaried professionals: PAN, Aadhaar, 3 months salary slips, Form 16, and 6 months bank statements. For self-employed: 2-3 years of ITR, balance sheets, and bank statements. We also have specialized schemes for informal income earners!";
     } else if (msgLower.includes('compare') || msgLower.includes('rate') || msgLower.includes('bank') || msgLower.includes('sbi') || msgLower.includes('hdfc')) {
-      reply = "Currently, SBI Home Loans start at 8.10% p.a., HDFC starts at 8.35% p.a., and ICICI starts at 8.25% p.a. We help you compare and select the best fit according to your credit profile.";
+      reply = "Currently, SBI Home Loans start at 8.35% p.a., HDFC starts at 8.40% p.a., and LIC Housing starts at 8.40% p.a. We help you compare and select the best fit according to your credit profile.";
     } else if (msgLower.includes('apply') || msgLower.includes('consult') || msgLower.includes('call')) {
       reply = "You can quickly apply by filling out the consultation form on our website or by sending 'Hi' to our WhatsApp CTA. One of our specialists will call you back within 30 minutes!";
     }
