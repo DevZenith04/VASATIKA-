@@ -116,8 +116,8 @@
 <!-- 04 Hero Section -->
 <section id="hero">
   <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-7">
+    <div class="row align-items-center g-5" style="min-height:420px;">
+      <div class="col-lg-8">
         <div class="hero-eyebrow mb-3 d-inline-flex align-items-center gap-2" style="background:rgba(255,255,255,0.15); padding:6px 16px; border-radius:30px; font-size:14px; font-weight:700;"><i data-lucide="sparkles" style="color:#FFC83D"></i> Vasatika Finance</div>
         <h1 class="reveal-headline">Apna Ghar.<br><span>Apni Pehchan.</span></h1>
         <p class="hero-sub reveal-sub">Compare Multiple Banks. Get Better Rates. Move Into Your Dream Home Faster.</p>
@@ -152,12 +152,26 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 text-center position-relative mobile-none float-hero-svg">
-        <div class="photo-placeholder-box" style="min-height: 350px; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff; margin-bottom: 0;">
-          <i data-lucide="image" style="color: #fff;"></i>
-          <span>Hero Property Photo Placeholder</span>
-          <p style="font-size:12px; color:rgba(255,255,255,0.7); margin-top:8px;">[ Add hero_property.jpg here ]</p>
+      <div class="col-lg-4 text-center position-relative mobile-none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:18px;padding:20px 14px;text-align:center;backdrop-filter:blur(6px);animation:floatCard1 4s ease-in-out infinite;">
+            <div style="font-size:30px;font-weight:900;color:#FFC83D;font-family:'IBM Plex Sans',sans-serif;">8.35%</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;">SBI Rate</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:18px;padding:20px 14px;text-align:center;backdrop-filter:blur(6px);animation:floatCard2 5s ease-in-out infinite;">
+            <div style="font-size:30px;font-weight:900;color:#FFC83D;font-family:'IBM Plex Sans',sans-serif;">500+</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;">Loans Done</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:18px;padding:20px 14px;text-align:center;backdrop-filter:blur(6px);animation:floatCard3 6s ease-in-out infinite;">
+            <div style="font-size:30px;font-weight:900;color:#FFC83D;font-family:'IBM Plex Sans',sans-serif;">₹0</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;">Fee Ever</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:18px;padding:20px 14px;text-align:center;backdrop-filter:blur(6px);animation:floatCard1 7s ease-in-out infinite;">
+            <div style="font-size:30px;font-weight:900;color:#FFC83D;font-family:'IBM Plex Sans',sans-serif;">9+</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;">Banks</div>
+          </div>
         </div>
+        <style>@keyframes floatCard1{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes floatCard2{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes floatCard3{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}</style>
       </div>
     </div>
   </div>
