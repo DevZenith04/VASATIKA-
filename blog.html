@@ -297,7 +297,7 @@
 <script src="main.js"></script>
 
 <!-- Blog Reader Modal -->
-<div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+<div class="modal" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content" style="border-radius:24px; overflow:hidden; border:none; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
       <div id="modalBanner" style="height:320px; background-size:cover; background-position:center; position:relative;">
@@ -457,6 +457,12 @@ function openBlogModal(id) {
     });
   }
   myModalInstance.show();
+  
+  // Remove the wrapper class after the animation completes (1s) 
+  // so that normal modal scrolling is restored and scale(2) visual bounds don't cause page jumping.
+  setTimeout(() => {
+    modalEl.classList.remove('visible-lightbox');
+  }, 1000);
 }
 </script>
 
