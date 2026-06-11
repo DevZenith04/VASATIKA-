@@ -1138,7 +1138,7 @@ footer {
 
 /* ── HERO SECTION ───────────────────────────────────────── */
 #hero {
-  background: linear-gradient(135deg, #081F4D 0%, #0057D9 60%, #42B4FF 100%);
+  background: linear-gradient(135deg, #0B132B 0%, #1C2541 60%, #3A506B 100%);
   padding: 120px 0; color: #fff; position: relative; overflow: hidden;
 }
 #hero h1 { font-size: clamp(40px, 5.5vw, 72px); line-height: 1.1; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: #fff; }
