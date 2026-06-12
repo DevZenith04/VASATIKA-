@@ -423,6 +423,7 @@ const BLOG_POSTS = {
   }
 };
 
+let myModalInstance = null;
 function openBlogModal(id) {
   const post = BLOG_POSTS[id];
   if (!post) return;
@@ -433,7 +434,10 @@ function openBlogModal(id) {
   document.getElementById('modalContent').innerHTML = post.content;
   
   const modalEl = document.getElementById('blogModal');
-  new bootstrap.Modal(modalEl).show();
+  if (!myModalInstance) {
+    myModalInstance = new bootstrap.Modal(modalEl);
+  }
+  myModalInstance.show();
 }
 </script>
 
