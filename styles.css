@@ -1487,7 +1487,8 @@ footer {
  animation: gb-popup-scale-blur 1s both;
 }
 
-/* Fix popup taking the page down during scale(2) animation */
+/* Fix popup taking the page down during scale(2) animation and prevent horizontal snapping */
 .modal.visible-lightbox {
   overflow: hidden !important;
+  padding-right: 15px !important;
 }
