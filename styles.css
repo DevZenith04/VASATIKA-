@@ -1477,18 +1477,4 @@ footer {
   color: var(--card-color2, #42B4FF);
 }
 
-@keyframes gb-popup-scale-blur {
- 0% {opacity: 0;transform-origin: 50% 50%;transform: scale(2, 2);filter: blur(90px);}
- 100% {opacity: 1;transform-origin: 50% 50%;transform: scale(1, 1);filter: blur(0px);}
-}
- 
-.visible-section .gb-popup-scale-blur,
-.visible-lightbox .gb-popup-scale-blur {
- animation: gb-popup-scale-blur 1s both;
-}
 
-/* Fix popup taking the page down during scale(2) animation and prevent horizontal snapping */
-.modal.visible-lightbox {
-  overflow: hidden !important;
-  padding-right: 15px !important;
-}

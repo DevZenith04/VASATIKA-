@@ -423,7 +423,6 @@ const BLOG_POSTS = {
   }
 };
 
-let myModalInstance = null;
 function openBlogModal(id) {
   const post = BLOG_POSTS[id];
   if (!post) return;
@@ -434,35 +433,7 @@ function openBlogModal(id) {
   document.getElementById('modalContent').innerHTML = post.content;
   
   const modalEl = document.getElementById('blogModal');
-  const contentEl = modalEl.querySelector('.modal-content');
-  
-  // Reset classes first
-  modalEl.classList.remove('visible-lightbox');
-  contentEl.classList.remove('gb-popup-scale-blur');
-  
-  // Force a reflow to restart animation
-  void modalEl.offsetWidth;
-  
-  // Add classes to trigger the animation
-  modalEl.classList.add('visible-lightbox');
-  contentEl.classList.add('gb-popup-scale-blur');
-  
-  if (!myModalInstance) {
-    myModalInstance = new bootstrap.Modal(modalEl);
-    
-    // When modal is hidden, remove classes
-    modalEl.addEventListener('hidden.bs.modal', function () {
-      modalEl.classList.remove('visible-lightbox');
-      contentEl.classList.remove('gb-popup-scale-blur');
-    });
-  }
-  myModalInstance.show();
-  
-  // Remove the wrapper class after the animation completes (1s) 
-  // so that normal modal scrolling is restored and scale(2) visual bounds don't cause page jumping.
-  setTimeout(() => {
-    modalEl.classList.remove('visible-lightbox');
-  }, 1000);
+  new bootstrap.Modal(modalEl).show();
 }
 </script>
 
