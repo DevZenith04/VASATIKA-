@@ -1478,3 +1478,118 @@ footer {
 }
 
 
+
+/* ── MOBILE OPTIMISATIONS ─────────────────────────────────── */
+
+/* Header: reduce logo height on mobile so navbar isn't huge */
+@media (max-width: 767px) {
+  header { top: 0 !important; min-height: auto !important; padding: 8px 0 !important; }
+  .nav-logo img { max-height: 60px !important; }
+  .top-trust-bar { padding: 8px 0; font-size: 12px; }
+
+  /* Hero paddings */
+  #hero { padding: 60px 0 40px !important; }
+  #hero h1 { font-size: clamp(30px, 10vw, 44px) !important; line-height: 1.15 !important; }
+  #hero .hero-sub { font-size: 15px !important; line-height: 1.6 !important; }
+  #hero .d-flex.gap-3 { flex-direction: column !important; }
+  #hero .d-flex.gap-3 .btn { width: 100%; justify-content: center; }
+  .hero-trust-row { margin-top: 28px !important; }
+
+  /* Section spacing */
+  .section-padding { padding: 40px 0 !important; }
+  .section-padding-sm { padding: 30px 0 !important; }
+
+  /* Stats band: 2-col on mobile */
+  .stats-section .row { display: grid !important; grid-template-columns: 1fr 1fr !important; }
+  .stats-section .stat-num { font-size: 36px !important; }
+
+  /* Loan product cards: full width on mobile */
+  .products-section .col-md-4 { width: 100% !important; }
+
+  /* Calculator: stack vertically */
+  #home-calc-emi .row, #home-calc-elig .row { flex-direction: column !important; }
+  #home-calc-emi .col-md-6, #home-calc-elig .col-md-6 { width: 100% !important; max-width: 100% !important; }
+  .elig-wrap { padding: 20px 16px !important; }
+
+  /* Lead form: full width */
+  .lead-form-card { padding: 24px 18px !important; }
+  .lead-form-section .col-lg-6 { width: 100% !important; }
+
+  /* Blog grid: 1 column */
+  .blog-grid { grid-template-columns: 1fr !important; }
+
+  /* FAQ: smaller font */
+  .faq-q { font-size: 15px !important; padding: 14px 16px !important; }
+  .faq-a { font-size: 14px !important; padding: 0 16px 14px !important; }
+  .accordion-button { font-size: 14px !important; padding: 14px 16px !important; }
+
+  /* Final CTA */
+  .final-cta h2 { font-size: 28px !important; }
+  .final-cta p { font-size: 15px !important; }
+  .final-cta .btn { width: 100%; justify-content: center; }
+
+  /* Footer */
+  footer { padding: 48px 0 100px !important; }
+  footer .row { flex-direction: column !important; }
+  footer .col-md-2, footer .col-lg-4 { width: 100% !important; }
+
+  /* Floating buttons: smaller on mobile */
+  .floating-whatsapp, .floating-call { width: 48px !important; height: 48px !important; font-size: 22px !important; }
+  .chatbot-widget { width: calc(100vw - 32px) !important; left: 16px !important; right: 16px !important; bottom: 90px !important; }
+  .back-to-top-btn { bottom: 90px !important; right: 16px !important; }
+  .chatbot-toggle-btn { bottom: 90px !important; left: 16px !important; }
+
+  /* Body bottom padding for sticky CTA bar */
+  body { padding-bottom: 80px !important; }
+
+  /* Sticky mobile CTA bar at bottom */
+  .mobile-sticky-cta { display: flex !important; }
+
+  /* Blog modal on mobile */
+  .modal-dialog { margin: 12px !important; }
+  .modal-content { border-radius: 16px !important; }
+  #modalBanner { min-height: 140px !important; max-height: 180px !important; }
+  #modalTitle { font-size: 20px !important; }
+  .modal-body { max-height: 55vh !important; font-size: 14px !important; }
+
+  /* About page hero */
+  .about-hero { padding: 36px 0 48px !important; }
+
+  /* Journey timeline vertical on mobile */
+  .journey-timeline { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; padding-left: 36px !important; }
+  .journey-timeline::before { display: none !important; }
+  .journey-step { display: flex !important; align-items: center !important; gap: 16px !important; text-align: left !important; }
+  .journey-num { margin: 0 !important; flex-shrink: 0 !important; width: 48px !important; height: 48px !important; font-size: 18px !important; }
+
+  /* Process steps vertical */
+  .process-steps { grid-template-columns: 1fr !important; gap: 20px !important; }
+
+  /* Compare table: horizontal scroll */
+  .compare-table-wrap { overflow-x: auto !important; }
+  .compare-table { min-width: 600px; }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header { min-height: 100px !important; }
+  .nav-logo img { max-height: 80px !important; }
+  #hero { padding: 80px 0 !important; }
+  .products-section .col-md-4 { width: 50% !important; }
+  .stats-section .stat-num { font-size: 44px !important; }
+}
+
+/* Mobile sticky CTA bar */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  border-top: 1.5px solid #E8EEF8;
+  box-shadow: 0 -4px 20px rgba(8,31,77,0.12);
+  padding: 10px 16px;
+  z-index: 500;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-sticky-cta a { flex: 1; text-align: center; padding: 11px 8px; border-radius: 12px; font-weight: 700; font-size: 14px; }

@@ -12,6 +12,7 @@
 {"@context":"https://schema.org","@type":"FinancialService","name":"Vasatika","description":"Home loan DSA agent helping customers compare and apply for home loans from SBI, HDFC, LIC Housing, PNB Housing, Indian Bank, Aadhar, Utkarsh, Shubham, Piramal across Uttar Pradesh","areaServed":["Lucknow","Kanpur","Agra","Varanasi","Prayagraj","Meerut","Gorakhpur","Noida","Uttar Pradesh"],"serviceType":["Home Loan","Loan Against Property","Home Construction Loan","Balance Transfer"],"telephone":"+91-9839324536","address":{"@type":"PostalAddress","addressLocality":"Gorakhpur","addressRegion":"Uttar Pradesh","addressCountry":"IN"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="image" href="logo_symbol_opt.png">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Sans:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +37,7 @@
     <div class="d-flex align-items-center gap-3">
       <a href="https://wa.me/919839324536" target="_blank" class="trust-item"><i data-lucide="message-circle"></i> 💬 WhatsApp</a>
       <span>|</span>
-      <a href="apply.html" class="fw-bold text-warning">Quick Apply</a>
+      <a href="form.html" class="fw-bold text-warning">Quick Apply</a>
       <span>|</span>
       <div class="lang-switcher" style="cursor:pointer;">🌐 EN | हिंदी</div>
     </div>
@@ -47,7 +48,7 @@
 <header class="main-nav-header d-flex align-items-center">
   <div class="container nav-inner d-flex justify-content-between align-items-center w-100">
     <a href="index.html" class="nav-logo d-flex align-items-center gap-2 text-decoration-none">
-      <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+      <img src="logo_symbol_opt.png" alt="Vasatika Logo" width="83" height="150" decoding="async" style="height: 150px;">
       <div class="logo-text"><strong>Vasatika</strong><span style="font-size:10px; display:block;">Building Trust. Creating Homes.</span></div>
     </a>
     <ul class="nav-links d-flex align-items-center gap-1 list-unstyled mb-0 mobile-none">
@@ -73,7 +74,7 @@
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-header">
     <a href="index.html" class="nav-logo text-decoration-none">
-      <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+      <img src="logo_symbol_opt.png" alt="Vasatika Logo" width="83" height="150" decoding="async" style="height: 150px;">
       <div class="logo-text"><strong>Vasatika</strong><span>Building Trust. Creating Homes.</span></div>
     </a>
     <button class="mobile-close" onclick="closeMNav()">✕</button>
@@ -145,6 +146,7 @@
               <div style="background:var(--white);border-radius:10px;padding:16px;border:1.5px solid var(--border)"><div style="font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:800;color:var(--red)">48 hrs</div><div style="font-size:12px;color:var(--muted)">Est. Approval Time</div></div>
             </div>
             <a href="apply.html" class="btn btn-red" style="font-size:15px;padding:13px 32px;margin-right:12px">Apply Now with This Profile →</a>
+            <button onclick="submitEligibility()" class="btn btn-green" style="font-size:15px;padding:13px 24px;background:#25D366;color:#fff;border:none;border-radius:14px;margin-right:12px;">💬 Send to WhatsApp</button>
             <button onclick="goStep(1)" class="btn btn-outline" style="font-size:15px;padding:13px 24px">Recalculate</button>
             <p style="font-size:11px;color:var(--muted);margin-top:14px">*Indicative. Actual eligibility determined by bank after full assessment.</p>
           </div>
@@ -176,7 +178,7 @@
     <div class="row g-4">
       <div class="col-md-6">
         <div class="lifestyle-mini-item">
-          <img src="elig_planning.jpg" alt="Family planning home purchase budget" onerror="this.style.display='none'">
+          <img src="elig_planning.jpg" alt="Family planning home purchase budget" onerror="this.style.display='none'" loading="lazy">
           <div class="lifestyle-mini-caption">
             <h5>📊 Plan Before You Apply</h5>
             <p>Know your loan limit before approaching any bank</p>
@@ -185,7 +187,7 @@
       </div>
       <div class="col-md-6">
         <div class="lifestyle-mini-item">
-          <img src="elig_approved.jpg" alt="Loan approval document celebration" onerror="this.style.display='none'">
+          <img src="elig_approved.jpg" alt="Loan approval document celebration" onerror="this.style.display='none'" loading="lazy">
           <div class="lifestyle-mini-caption">
             <h5>✅ Fast Approval Support</h5>
             <p>48–72 hour approvals through our bank network</p>
@@ -211,7 +213,7 @@
     <div class="row g-5">
       <div class="col-lg-4">
         <a href="index.html" class="nav-logo d-flex align-items-center gap-2 text-decoration-none mb-3">
-          <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+          <img src="logo_symbol_opt.png" alt="Vasatika Logo" width="83" height="150" decoding="async" style="height: 150px;">
           <div class="logo-text"><strong class="text-white">Vasatika</strong><span style="font-size:10px; display:block; color:rgba(255,255,255,0.5)">Building Trust. Creating Homes.</span></div>
         </a>
         <p style="font-size:14px;">Vasatika is a registered housing finance agent and loan facilitator. Helping families secure the most affordable housing loans across Uttar Pradesh.</p>

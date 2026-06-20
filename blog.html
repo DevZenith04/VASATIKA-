@@ -12,6 +12,7 @@
 {"@context":"https://schema.org","@type":"FinancialService","name":"Vasatika","description":"Home loan DSA agent helping customers compare and apply for home loans from SBI, HDFC, LIC Housing, PNB Housing, Indian Bank, Aadhar, Utkarsh, Shubham, Piramal across Uttar Pradesh","areaServed":["Lucknow","Kanpur","Agra","Varanasi","Prayagraj","Meerut","Gorakhpur","Noida","Uttar Pradesh"],"serviceType":["Home Loan","Loan Against Property","Home Construction Loan","Balance Transfer"],"telephone":"+91-9839324536","address":{"@type":"PostalAddress","addressLocality":"Gorakhpur","addressRegion":"Uttar Pradesh","addressCountry":"IN"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="image" href="logo_symbol_opt.png">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=Inter:wght@400;500;600&family=IBM+Plex+Sans:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,12 +32,12 @@
       <span class="mobile-none">|</span>
       <span class="trust-item"><i data-lucide="star"></i> ⭐ 4.9 Customer Rating</span>
       <span class="mobile-none">|</span>
-      <span class="trust-item"><i data-lucide="landmark"></i> 🏦 15+ Lending Partners</span>
+      <span class="trust-item"><i data-lucide="landmark"></i> 🏦 9+ Lending Partners</span>
     </div>
     <div class="d-flex align-items-center gap-3">
       <a href="https://wa.me/919839324536" target="_blank" class="trust-item"><i data-lucide="message-circle"></i> 💬 WhatsApp</a>
       <span>|</span>
-      <a href="apply.html" class="fw-bold text-warning">Quick Apply</a>
+      <a href="form.html" class="fw-bold text-warning">Quick Apply</a>
       <span>|</span>
       <div class="lang-switcher" style="cursor:pointer;">🌐 EN | हिंदी</div>
     </div>
@@ -47,7 +48,7 @@
 <header class="main-nav-header d-flex align-items-center">
   <div class="container nav-inner d-flex justify-content-between align-items-center w-100">
     <a href="index.html" class="nav-logo d-flex align-items-center gap-2 text-decoration-none">
-      <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+      <img src="logo_symbol_opt.png" alt="Vasatika Logo" width="83" height="150" decoding="async" style="height: 150px;">
       <div class="logo-text"><strong>Vasatika</strong><span style="font-size:10px; display:block;">Building Trust. Creating Homes.</span></div>
     </a>
     <ul class="nav-links d-flex align-items-center gap-1 list-unstyled mb-0 mobile-none">
@@ -73,7 +74,7 @@
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-header">
     <a href="index.html" class="nav-logo text-decoration-none">
-      <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+      <img src="logo_symbol_opt.png" alt="Vasatika Logo" width="83" height="150" decoding="async" style="height: 150px;">
       <div class="logo-text"><strong>Vasatika</strong><span>Building Trust. Creating Homes.</span></div>
     </a>
     <button class="mobile-close" onclick="closeMNav()">✕</button>
@@ -184,7 +185,7 @@
     <div class="row g-4">
       <div class="col-md-6">
         <div class="lifestyle-mini-item">
-          <img src="blog_read.jpg" alt="Person reading home loan guide on phone" onerror="this.style.display='none'">
+          <img src="blog_read.jpg" alt="Person reading home loan guide on phone" onerror="this.style.display='none'" loading="lazy">
           <div class="lifestyle-mini-caption">
             <h5>📱 Knowledge is Power</h5>
             <p>Read our guides before choosing a home loan</p>
@@ -193,7 +194,7 @@
       </div>
       <div class="col-md-6">
         <div class="lifestyle-mini-item">
-          <img src="blog_family.jpg" alt="Family moving into new home happily" onerror="this.style.display='none'">
+          <img src="blog_family.jpg" alt="Family moving into new home happily" onerror="this.style.display='none'" loading="lazy">
           <div class="lifestyle-mini-caption">
             <h5>🎉 Your Success Story Starts Here</h5>
             <p>20,000+ UP families served — read their stories</p>
@@ -208,7 +209,7 @@
 <section class="final-cta scroll-reveal">
   <div class="container">
     <h2>Ready To Own Your Dream Home?</h2>
-    <p>Compare 15+ Lending Partners and get the absolute lowest interest rate guaranteed.</p>
+    <p>Compare 9+ Lending Partners and get the absolute lowest interest rate guaranteed.</p>
     <a href="apply.html" class="btn btn-light btn-primary-energetic" style="font-size:16px; padding:14px 36px; border-radius:14px; color:#FF3B30; font-weight:800;">Apply Now</a>
   </div>
 </section>
@@ -219,7 +220,7 @@
     <div class="row g-5">
       <div class="col-lg-4">
         <a href="index.html" class="nav-logo d-flex align-items-center gap-2 text-decoration-none mb-3">
-          <img src="logo_symbol.png" alt="Vasatika Logo" style="height: 150px;">
+          <img src="logo_symbol_opt.png" alt="Vasatika Logo" width="83" height="150" decoding="async" style="height: 150px;">
           <div class="logo-text"><strong class="text-white">Vasatika</strong><span style="font-size:10px; display:block; color:rgba(255,255,255,0.5)">Building Trust. Creating Homes.</span></div>
         </a>
         <p style="font-size:14px;">Vasatika is a registered housing finance agent and loan facilitator. Helping families secure the most affordable housing loans across Uttar Pradesh.</p>
@@ -423,7 +424,6 @@ const BLOG_POSTS = {
   }
 };
 
-let myModalInstance = null;
 function openBlogModal(id) {
   const post = BLOG_POSTS[id];
   if (!post) return;
@@ -434,10 +434,9 @@ function openBlogModal(id) {
   document.getElementById('modalContent').innerHTML = post.content;
   
   const modalEl = document.getElementById('blogModal');
-  if (!myModalInstance) {
-    myModalInstance = new bootstrap.Modal(modalEl);
-  }
-  myModalInstance.show();
+  // Reuse existing instance or create new one — prevents duplicate backdrop stacking
+  const instance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+  instance.show();
 }
 </script>
 

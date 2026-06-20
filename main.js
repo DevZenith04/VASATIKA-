@@ -30,14 +30,90 @@ function closeMNav() {
   if (burger) burger.classList.remove('active');
 }
 
-// Lead Form Submit
-function submitLead() {
+// ── WHATSAPP FORM SUBMISSIONS ─────────────────────────────
+const WA_NUMBER = '919839324536';
+
+function sendToWhatsApp(message) {
+  const encoded = encodeURIComponent(message);
+  window.open('https://wa.me/' + WA_NUMBER + '?text=' + encoded, '_blank');
   const toast = document.getElementById('toast');
   if (toast) {
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 4000);
   }
 }
+
+// 1. Get Free Consultation (index.html)
+function submitLead() {
+  const name    = document.getElementById('lead-name')    ? document.getElementById('lead-name').value    : '';
+  const phone   = document.getElementById('lead-phone')   ? document.getElementById('lead-phone').value   : '';
+  const city    = document.getElementById('lead-city')    ? document.getElementById('lead-city').value    : '';
+  const amount  = document.getElementById('lead-amount')  ? document.getElementById('lead-amount').value  : '';
+  const emptype = document.getElementById('lead-emptype') ? document.getElementById('lead-emptype').value : '';
+  if (!name || !phone) { alert('Please fill Name and Mobile Number.'); return; }
+  const msg =
+    '🏠 *New Consultation Request — Vasatika*\n' +
+    '👤 Name: ' + name + '\n' +
+    '📞 Phone: ' + phone + '\n' +
+    '🏙️ City: ' + (city || 'Not specified') + '\n' +
+    '💰 Loan Amount: ₹' + (amount || 'Not specified') + '\n' +
+    '💼 Employment: ' + (emptype || 'Not specified') + '\n' +
+    '📅 Source: Free Consultation Form';
+  sendToWhatsApp(msg);
+}
+
+// 2. Loan Application Form (apply.html)
+function submitApplication() {
+  const name    = document.getElementById('app-name')    ? document.getElementById('app-name').value    : '';
+  const phone   = document.getElementById('app-phone')   ? document.getElementById('app-phone').value   : '';
+  const email   = document.getElementById('app-email')   ? document.getElementById('app-email').value   : '';
+  const city    = document.getElementById('app-city')    ? document.getElementById('app-city').value    : '';
+  const ltype   = document.getElementById('app-ltype')   ? document.getElementById('app-ltype').value   : '';
+  const amount  = document.getElementById('app-amount')  ? document.getElementById('app-amount').value  : '';
+  const emptype = document.getElementById('app-emptype') ? document.getElementById('app-emptype').value : '';
+  const income  = document.getElementById('app-income')  ? document.getElementById('app-income').value  : '';
+  const emis    = document.getElementById('app-emis')    ? document.getElementById('app-emis').value    : '';
+  const bank    = document.getElementById('app-bank')    ? document.getElementById('app-bank').value    : '';
+  const message = document.getElementById('app-message') ? document.getElementById('app-message').value : '';
+  if (!name || !phone) { alert('Please fill Name and Mobile Number.'); return; }
+  const msg =
+    '📋 *New Loan Application — Vasatika*\n' +
+    '👤 Name: ' + name + '\n' +
+    '📞 Phone: ' + phone + '\n' +
+    '📧 Email: ' + (email || 'Not provided') + '\n' +
+    '🏙️ City: ' + (city || 'Not specified') + '\n' +
+    '🏠 Loan Type: ' + ltype + '\n' +
+    '💰 Loan Amount: ' + amount + '\n' +
+    '💼 Employment: ' + emptype + '\n' +
+    '💵 Monthly Income: ₹' + (income || 'Not specified') + '\n' +
+    '📊 Existing EMIs: ' + emis + '\n' +
+    '🏦 Preferred Bank: ' + bank + '\n' +
+    '💬 Message: ' + (message || 'None') + '\n' +
+    '📅 Source: Loan Application Form';
+  sendToWhatsApp(msg);
+}
+
+// 3. Eligibility Checker (eligibility.html)
+function submitEligibility() {
+  const emptype  = document.getElementById('emp-type')         ? document.getElementById('emp-type').value         : '';
+  const income   = document.getElementById('monthly-income')   ? document.getElementById('monthly-income').value   : '';
+  const emis     = document.getElementById('other-emis')       ? document.getElementById('other-emis').value       : '';
+  const cibil    = document.getElementById('cibil')            ? document.getElementById('cibil').value            : '';
+  const eligible = document.getElementById('elig-amount-val')  ? document.getElementById('elig-amount-val').textContent : '';
+  const emi      = document.getElementById('elig-emi')         ? document.getElementById('elig-emi').textContent        : '';
+  const msg =
+    '📊 *Eligibility Check Result — Vasatika*\n' +
+    '💼 Employment: ' + emptype + '\n' +
+    '💵 Monthly Income: ₹' + income + '\n' +
+    '📊 Other EMIs: ₹' + (emis || '0') + '\n' +
+    '⭐ CIBIL Score: ' + cibil + '\n' +
+    '✅ Eligible Loan: ₹' + eligible + '\n' +
+    '💳 Max EMI: ' + emi + '\n' +
+    '📅 Source: Eligibility Calculator\n' +
+    '\n_Please call me to proceed with application._';
+  sendToWhatsApp(msg);
+}
+
 
 // Calculator Tab Switcher
 function switchHomeTab(tab) {
@@ -339,11 +415,11 @@ function animateCounter(el) {
       clearInterval(timer);
     }
     
-    if (target === 20000) {
-      el.textContent = current.toLocaleString('en-IN') + '+';
-    } else if (target === 500) {
+    if (target === 500) {
+      el.textContent = current + '+';
+    } else if (target === 120) {
       el.textContent = '₹' + current + 'Cr+';
-    } else if (target === 15) {
+    } else if (target === 9) {
       el.textContent = current + '+';
     } else if (target === 98) {
       el.textContent = current + '%';
@@ -415,9 +491,9 @@ $(document).ready(function() {
     if (timelineEl) timelineEl.classList.add('revealed');
     document.querySelectorAll('.stat-num').forEach(el => {
       const target = el.getAttribute('data-target');
-      if (target === '20000') el.textContent = '20,000+';
-      else if (target === '500') el.textContent = '₹500Cr+';
-      else if (target === '15') el.textContent = '15+';
+      if (target === '500') el.textContent = '500+';
+      else if (target === '120') el.textContent = '₹120Cr+';
+      else if (target === '9') el.textContent = '9+';
       else if (target === '98') el.textContent = '98%';
     });
   }
