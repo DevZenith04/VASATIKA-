@@ -154,6 +154,59 @@
     });
   }
 
+
+  function setupPlanner() {
+    const planner = one("[data-planner]");
+    if (!planner) return;
+    const steps = many("[data-planner-step]", planner);
+    const progress = one("[data-planner-progress]", planner);
+    const result = one("[data-planner-result]", planner);
+    let current = 0;
+    let intention = "home";
+    let pace = "ready";
+    const messages = {
+      home: { ready: "You are ready for a focused home-loan shortlist. Bring your preferred budget and we’ll compare the route.", research: "Start with the EMI calculator and lender comparison, then bring the shortlist to the advisory desk.", documents: "Gather identity and income proof first; property details can follow once the route is clearer." },
+      build: { ready: "A construction-loan conversation should begin with plot ownership, plan approval, and stage-wise funding.", research: "Start with the construction-loan guide and a realistic stage budget before comparing lenders.", documents: "Plot papers, approved plan, and construction estimate are the most useful first documents." },
+      switch: { ready: "Bring your current loan statement and repayment history so we can test whether a transfer improves the full picture.", research: "Compare current rate, remaining tenure, and transfer costs before making a switch.", documents: "Start with the existing sanction letter, latest statement, and repayment track." }
+    };
+    const show = (index) => { current = index; steps.forEach((step, i) => step.classList.toggle("active", i === index)); if (progress) progress.style.width = `${((index + 1) / steps.length) * 100}%`; };
+    many("[data-planner-choice]", planner).forEach((choice) => choice.addEventListener("click", () => { const value = choice.dataset.plannerChoice; if (["home","build","switch"].includes(value)) intention = value; else pace = value; many("[data-planner-choice]", planner).forEach((item) => item.classList.remove("selected")); choice.classList.add("selected"); if (current === 0 || current === 1) { show(current + 1); if (current === 2 && result) result.textContent = messages[intention][pace]; } }));
+    one("[data-planner-back]", planner)?.addEventListener("click", () => show(Math.max(0, current - 1)));
+    one("[data-planner-reset]", planner)?.addEventListener("click", () => { intention = "home"; pace = "ready"; many("[data-planner-choice]", planner).forEach((item) => item.classList.remove("selected")); if (result) result.textContent = ""; show(0); });
+    show(0);
+    const originalChoiceHandler = many("[data-planner-choice]", planner);
+    originalChoiceHandler.forEach((choice) => choice.addEventListener("click", () => { if (current === 2 && result) result.textContent = messages[intention][pace]; }));
+  }
+
+  function setupChecklist() {
+    const checks = many("[data-check]");
+    if (!checks.length) return;
+    const progress = one("[data-check-progress]");
+    const label = one("[data-check-label]");
+    const update = () => { const complete = checks.filter((check) => check.checked).length; if (progress) progress.style.width = `${(complete / checks.length) * 100}%`; if (label) label.textContent = `${complete} of ${checks.length} ready`; };
+    checks.forEach((check) => check.addEventListener("change", update));
+    one("[data-check-reset]")?.addEventListener("click", () => { checks.forEach((check) => { check.checked = false; }); update(); });
+    update();
+  }
+
+  function setupCompareFilters() {
+    const search = one("[data-lender-filter]");
+    const rate = one("[data-rate-filter]");
+    const rows = many("[data-compare-table] tr[data-lender]");
+    if (!rows.length) return;
+    const filter = () => { const query = (search?.value || "").toLowerCase().trim(); const max = rate?.value === "all" ? Infinity : Number(rate.value); rows.forEach((row) => { row.hidden = !(row.dataset.lender.includes(query) && Number(row.dataset.rate) <= max); }); };
+    search?.addEventListener("input", filter); rate?.addEventListener("change", filter); filter();
+  }
+
+  function setupResourceSearch() {
+    const search = one("[data-resource-search]");
+    const cards = many(".article-card");
+    const count = one("[data-resource-count]");
+    if (!search || !cards.length) return;
+    const filter = () => { const query = search.value.toLowerCase().trim(); let visible = 0; cards.forEach((card) => { const match = card.textContent.toLowerCase().includes(query); card.classList.toggle("is-hidden", !match); if (match) visible += 1; }); if (count) count.textContent = `${visible} guide${visible === 1 ? "" : "s"} available`; };
+    search.addEventListener("input", filter); filter();
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     setupNavigation();
     setupSmoothAnchors();
@@ -162,6 +215,10 @@
     setupForms();
     setupFaqs();
     setupButtonFeedback();
+    setupPlanner();
+    setupChecklist();
+    setupCompareFilters();
+    setupResourceSearch();
     window.lucide?.createIcons();
   });
 })();
