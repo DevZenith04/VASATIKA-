@@ -52,7 +52,7 @@ function submitLead() {
   const emptype = document.getElementById('lead-emptype') ? document.getElementById('lead-emptype').value : '';
   if (!name || !phone) { alert('Please fill Name and Mobile Number.'); return; }
   const msg =
-    '🏠 *New Consultation Request — VASATIKA*\n' +
+    '🏠 *New Consultation Request — Home Loan by Sanjay Pandey*\n' +
     '👤 Name: ' + name + '\n' +
     '📞 Phone: ' + phone + '\n' +
     '🏙️ City: ' + (city || 'Not specified') + '\n' +
@@ -77,7 +77,7 @@ function submitApplication() {
   const message = document.getElementById('app-message') ? document.getElementById('app-message').value : '';
   if (!name || !phone) { alert('Please fill Name and Mobile Number.'); return; }
   const msg =
-    '📋 *New Loan Application — VASATIKA*\n' +
+    '📋 *New Loan Application — Home Loan by Sanjay Pandey*\n' +
     '👤 Name: ' + name + '\n' +
     '📞 Phone: ' + phone + '\n' +
     '📧 Email: ' + (email || 'Not provided') + '\n' +
@@ -102,7 +102,7 @@ function submitEligibility() {
   const eligible = document.getElementById('elig-amount-val')  ? document.getElementById('elig-amount-val').textContent : '';
   const emi      = document.getElementById('elig-emi')         ? document.getElementById('elig-emi').textContent        : '';
   const msg =
-    '📊 *Eligibility Check Result — VASATIKA*\n' +
+    '📊 *Eligibility Check Result — Home Loan by Sanjay Pandey*\n' +
     '💼 Employment: ' + emptype + '\n' +
     '💵 Monthly Income: ₹' + income + '\n' +
     '📊 Other EMIs: ₹' + (emis || '0') + '\n' +
@@ -261,7 +261,7 @@ function exportAmortizationPDF() {
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(18);
   doc.setTextColor(10, 37, 64);
-  doc.text("VASATIKA", 14, 20);
+  doc.text("Home Loan by Sanjay Pandey", 14, 20);
 
   doc.setFont("Helvetica", "normal");
   doc.setFontSize(12);
@@ -298,7 +298,7 @@ function exportAmortizationPDF() {
     headStyles: { fillColor: [10, 37, 64] }
   });
 
-  doc.save("VASATIKA-Home-Loan-Schedule.pdf");
+  doc.save("Home Loan by Sanjay Pandey-Home-Loan-Schedule.pdf");
 }
 
 // Eligibility Calculator Math
@@ -375,7 +375,7 @@ function sendChatbotMsg() {
   // Mock reply after interval
   setTimeout(() => {
     let msgLower = userMsg.toLowerCase();
-    let reply = "I am Vasu, your VASATIKA assistant. I can help you with eligibility, document checklists, comparing bank rates, or setting up a callback. How can I help you today?";
+    let reply = "I am Vasu, your Home Loan by Sanjay Pandey assistant. I can help you with eligibility, document checklists, comparing bank rates, or setting up a callback. How can I help you today?";
     
     if (msgLower.includes('emi') || msgLower.includes('calculator') || msgLower.includes('calculate')) {
       reply = "To calculate your exact EMI, use our interactive <strong>EMI Calculator</strong> tab on the homepage. For example, a loan of ₹30 Lakh at 8.55% for 20 years results in an EMI of ₹26,108/month.";
