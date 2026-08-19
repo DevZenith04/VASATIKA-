@@ -1,4 +1,19 @@
 
+function bindNextLevelFeatures(){
+  const formatMoney=n=>'₹'+Math.round(Number(n)||0).toLocaleString('en-IN');
+  const scenarios={
+    'first-home':['First home','Start with monthly comfort and property readiness.','For a first purchase, begin with the monthly number you can carry, the contribution you expect to make, and the documents that make the property financeable. Then move to lender comparison.'],
+    salaried:['Salaried','Make the income trail easy to explain.','Keep employment continuity, salary credits, existing obligations, and tax or bank records aligned before comparing lenders.'],
+    'self-employed':['Self-employed','Translate the business story into a clear file.','Keep banking, tax records, business continuity, ownership, and personal obligations ready for a lender conversation.'],
+    construction:['Construction','Sequence the build before the funding.','Land, approvals, estimates, stage milestones, inspections, and release conditions should be discussed as one project.'],
+    transfer:['Balance transfer','Compare the entire difference.','Review outstanding principal, remaining tenure, current rate, switching costs, new conditions, and the real repayment difference.']
+  };
+  document.querySelectorAll('[data-scenario]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.scenario-tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const s=scenarios[btn.dataset.scenario]||scenarios['first-home'];const panel=document.querySelector('[data-scenario-panel]');if(panel)panel.innerHTML='<span class="eyebrow" style="color:var(--blue)">'+s[0]+'</span><h3>'+s[1]+'</h3><p>'+s[2]+'</p><div class="scenario-grid"><span><b>01</b> Define the monthly picture</span><span><b>02</b> Prepare the profile file</span><span><b>03</b> Review property conditions</span><span><b>04</b> Compare the route</span></div><a class="button button-orange" href="eligibility.html">Start this route →</a>';}));
+  const run=document.querySelector('[data-affordability-run]');
+  if(run)run.addEventListener('click',()=>{const income=+document.querySelector('#aff-income').value||0,ob=+document.querySelector('#aff-obligations').value||0,con=+document.querySelector('#aff-contribution').value||0;const available=Math.max(0,income*.45-ob),emi=Math.round(available);const rate=.0835/12,months=240;const loan=emi?Math.round(emi*(Math.pow(1+rate,months)-1)/(rate*Math.pow(1+rate,months))):0;const el=document.querySelector('[data-affordability-amount]');if(el)el.textContent=formatMoney(loan);const e=document.querySelector('[data-affordability-emi]');if(e)e.textContent=formatMoney(emi);const r=document.querySelector('[data-affordability-ratio]');if(r)r.textContent=Math.max(0,Math.round((income-ob)/Math.max(1,income)*100))+'%';const c=document.querySelector('[data-affordability-copy]');if(c)c.textContent='This indicative planning range uses a 45% repayment ceiling and the current sample rate. Confirm the lender’s method before acting.';});
+}
+
+
 function bindSignalHeader(){const header=document.querySelector('.site-nav');if(!header)return;const sync=()=>header.classList.toggle('scrolled',window.scrollY>18);sync();window.addEventListener('scroll',sync,{passive:true});}
 
 (()=>{const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];const money=n=>`₹${Math.round(Number(n)||0).toLocaleString("en-IN")}`;const store=(k,v)=>localStorage.setItem(k,JSON.stringify(v));const load=(k,d=[])=>JSON.parse(localStorage.getItem(k)||JSON.stringify(d));const event=(name,data={})=>{const list=load("hlsp_events");list.push({event:name,data,time:new Date().toISOString(),path:location.pathname,referrer:document.referrer});store("hlsp_events",list.slice(-500))};
@@ -17,4 +32,4 @@ function admin(){const events=load("hlsp_events"),leads=load("hlsp_leads"),rows=
 
 function creativeMotion(){const rail=document.querySelector('.journey-rail');if(rail){const links=[...rail.querySelectorAll('a')];links.forEach((a,i)=>{a.style.transitionDelay=`${i*25}ms`;a.addEventListener('mouseenter',()=>links.forEach((x,j)=>x.classList.toggle('is-near',Math.abs(j-i)===1)))})}document.querySelectorAll('.card,.hero-card,.form-card').forEach(el=>el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',`${((e.clientX-r.left)/r.width*100).toFixed(1)}%`);el.style.setProperty('--my',`${((e.clientY-r.top)/r.height*100).toFixed(1)}%`)}));}
 
-document.addEventListener("DOMContentLoaded",()=>{bindSignalHeader();navigation();reveal();calculator();leadForms();eligibility();matching();transferTopup();filters();faq();documents();tracking();admin();creativeMotion()})})();
+function initHomeLoanApp(){bindNextLevelFeatures();bindSignalHeader();navigation();reveal();calculator();leadForms();eligibility();matching();transferTopup();filters();faq();documents();tracking();admin();creativeMotion()};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initHomeLoanApp)}else{initHomeLoanApp()}})();
