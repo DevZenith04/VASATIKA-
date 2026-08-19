@@ -1,9 +1,13 @@
-# Direct GitHub redesign and header-removal implementation
+# Direct GitHub redesign, header-removal, and attached expansion implementation
 
 - [x] Remove the screenshot-matched utility/navigation header strip from every website page.
 - [ ] Sync and inspect the actual DevZenith04/VASATIKA- repository state before further edits.
 - [ ] Confirm all work is being applied to repository files, not the separate webdev scaffold.
 - [ ] Read the remaining attachment requirements and map every feature to the existing repository.
+- [ ] Audit existing tools.html, lender profiles, city pages, blog, compare, sitemap, robots, and image assets against the attached expansion requirements.
+- [ ] Research and date-stamp lender rate sources, FOIR guidance, GST rules, UP property/RERA sources, and bank-logo mappings.
+- [ ] Build the lender directory/profile expansion, rent-vs-buy, tiered FOIR affordability, GST calculator, long-form guides, city enhancements, compliant trust module, media optimization, and SEO updates.
+- [ ] Validate every calculator, route, asset path, image dimension, responsive layout, and console state before pushing.
 - [ ] Establish the energetic multi-page information architecture and reusable design tokens.
 - [ ] Preserve the Home Loan by Sanjay Kumar Pandey brand while evolving the visual system beyond the current shell.
 - [ ] Complete customer website pages, lender/partner sections, trust messaging, callback/contact actions, and consent-aware lead flows.

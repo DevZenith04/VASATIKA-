@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+Disallow: /admin.html
+Disallow: /admin-ops.html
+Disallow: /status.html
+Disallow: /account.html
+
+Sitemap: https://homeloanbysanjaypandey.com/sitemap.xml
