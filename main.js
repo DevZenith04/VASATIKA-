@@ -33,3 +33,23 @@ function admin(){const events=load("hlsp_events"),leads=load("hlsp_leads"),rows=
 function creativeMotion(){const rail=document.querySelector('.journey-rail');if(rail){const links=[...rail.querySelectorAll('a')];links.forEach((a,i)=>{a.style.transitionDelay=`${i*25}ms`;a.addEventListener('mouseenter',()=>links.forEach((x,j)=>x.classList.toggle('is-near',Math.abs(j-i)===1)))})}document.querySelectorAll('.card,.hero-card,.form-card').forEach(el=>el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',`${((e.clientX-r.left)/r.width*100).toFixed(1)}%`);el.style.setProperty('--my',`${((e.clientY-r.top)/r.height*100).toFixed(1)}%`)}));}
 
 function initHomeLoanApp(){bindNextLevelFeatures();bindSignalHeader();navigation();reveal();calculator();leadForms();eligibility();matching();transferTopup();filters();faq();documents();tracking();admin();creativeMotion()};if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initHomeLoanApp)}else{initHomeLoanApp()}})();
+
+
+/* Voltage & Veranda interaction layer: lightweight energy, clear hierarchy, no dependency on a framework. */
+(()=>{
+  const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const prefersReduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const progress=document.createElement('div');
+  progress.className='page-progress';
+  progress.setAttribute('aria-hidden','true');
+  document.body.appendChild(progress);
+  const syncProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.transform=`scaleX(${max>0?window.scrollY/max:0})`};
+  window.addEventListener('scroll',syncProgress,{passive:true});syncProgress();
+  const current=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  $$('a[href]').forEach(a=>{const href=(a.getAttribute('href')||'').split('#')[0].split('?')[0].split('/').pop().toLowerCase();if(href&&href===current)a.classList.add('route-active')});
+  if(!prefersReduced){
+    $$('.hero-card,.form-card,.result-panel').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.setProperty('--energy-x',`${(x*5).toFixed(2)}deg`);card.style.setProperty('--energy-y',`${(y*-5).toFixed(2)}deg`);card.style.transform=`perspective(900px) rotateX(var(--energy-y)) rotateY(var(--energy-x)) translateY(-3px)`});card.addEventListener('pointerleave',()=>{card.style.transform=''});});
+    $$('.button-primary,.button-orange,.button-soft').forEach(button=>button.addEventListener('pointermove',e=>{const r=button.getBoundingClientRect();button.style.setProperty('--button-x',`${(e.clientX-r.left-r.width/2)*.08}px`);button.style.setProperty('--button-y',`${(e.clientY-r.top-r.height/2)*.08}px`)}));
+  }
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){document.querySelector('.mobile-drawer.open')?.classList.remove('open');document.body.classList.remove('lock')}});
+})();
